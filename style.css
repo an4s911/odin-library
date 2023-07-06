@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 15px;
+}
+
+#bookshelf {
+    display: flex;
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+    padding: 15px;
+
+    flex: 1 0 auto;
+    width: 200px;
+    max-width: 300px;
+
+    display: grid;
+    gap: 10px;
+
+    grid-template-areas:
+        "title"
+        "author"
+        "pages"
+        "read"
+        "remove";
+}
+
+.remove {
+    justify-self: start;
+}
+
+#addbook {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+}
+
+#addbook-form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+#addbook-form > div.read {
+    display: flex;
+    gap: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+button,
+.submit-btn {
+    padding: 5px;
+    background-color: antiquewhite;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+
+    transition: ease 0.5s;
+}
+
+button:hover,
+.submit-btn:hover {
+    background-color: rgb(249, 223, 189);
+
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 1);
+}
+
+.card > .read {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+button.toggle-read-btn {
+    font-size: x-small;
+    padding: 3px 10px;
+    background-color: antiquewhite;
+    border: 0.5px solid black;
+    border-radius: 2px;
+    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+
+    flex-grow: 1;
+
+    transition: ease 0.5s;
+}
