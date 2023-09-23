@@ -1,27 +1,29 @@
 // an array of Book objects
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read; // true or false
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read; // true or false
+    }
+
+    info() {
+        return (
+            `${this.title} by ${this.author}, ${this.pages} pages, ` +
+            (this.read ? "read" : "not read yet")
+        );
+    }
+
+    titleEquals(other) {
+        return this.title === other.title;
+    }
+
+    toggleRead() {
+        this.read = !this.read;
+    }
 }
-
-Book.prototype.info = function () {
-    return (
-        `${this.title} by ${this.author}, ${this.pages} pages, ` +
-        (this.read ? "read" : "not read yet")
-    );
-};
-
-Book.prototype.titleEquals = function (other) {
-    return this.title === other.title;
-};
-
-Book.prototype.toggleRead = function () {
-    this.read = !this.read;
-};
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
